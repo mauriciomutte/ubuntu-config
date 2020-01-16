@@ -109,3 +109,68 @@ echo ""
 green_text "> Installing youtube-dl (using curl)"
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
+
+
+
+# -------- DEVELOPMENT SETUP --------
+yellow_text "-------- DEVELOPMENT SETUP --------"
+
+# -> Install NVM
+echo ""
+green_text "> Installing NVM (using curl)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# -> Install NodeJS
+echo ""
+green_text "> Installing NodeJS (using nvm)"
+nvm install --lts
+
+node --version
+npm --version
+
+# -> Install build-essential
+echo ""
+green_text "> Installing build-essential (using apt)"
+sudo apt install build-essential -y
+
+# -> Install libssl-dev + libreadline-dev + zlib1g-dev
+echo ""
+green_text "> Installing libssl-dev + libreadline-dev + zlib1g-dev (using apt)"
+sudo apt install -y libssl-dev libreadline-dev zlib1g-dev -y
+
+# -> Install VSCode
+echo ""
+green_text "> Installing Visual Studio Code (using snap)"
+sudo snap install code --classic
+
+# -> Install Hyper
+echo ""
+green_text "> Installing Hyper (using apt-get)"
+sudo apt install hyper
+hyper i hyper-dracula
+
+# -> Install Insomnia
+echo ""
+green_text "> Installing Insomnia (using snap)"
+sudo snap install insomnia
+
+# -> Install Postman
+echo ""
+green_text "> Installing Postman (using flatpak)"
+flatpak install flathub com.getpostman.Postman
+
+# -> Install Heroku
+echo ""
+green_text "> Installing Heroku (using snap)"
+sudo snap install --classic heroku
+
+# -> Install Yarn
+echo ""
+green_text "> Installing Yarn"
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt update && sudo apt install yarn
