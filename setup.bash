@@ -46,7 +46,6 @@ echo ""
 green_text "> Installing ZSH (using snap)"
 sudo apt install zsh
 zsh --version
-chsh -s $(which zsh) # Make default
 
 # -> Install Oh My Zsh
 echo ""
