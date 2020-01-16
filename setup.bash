@@ -62,3 +62,50 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc
 
 rm --force ~/.zshrc
 mv /tmp/personal-setup/configs/.zshrc ~/
+
+
+
+# -------- INSTALL APPS --------
+yellow_text "-------- INSTALL APPS --------"
+
+# -> Install Chrome
+echo ""
+green_text "> Downloading Google Chrome (stable_amd64)"
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+echo ""
+green_text "> Installing Google Chrome (stable_amd64)"
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+
+# -> Install Spotify
+echo ""
+green_text "> Installing Spotify (using flatpak)"
+flatpak install flathub com.spotify.Client -y
+
+# -> Install Slack
+echo ""
+green_text "> Installing Slack (using flatpak)"
+flatpak install flathub com.slack.Slack -y
+flatpak override --user --env=TZ=America/Sao_Paulo com.slack.Slack
+
+# como nao temos mais horario de verao, estou usando temporariamente
+# esse TZ para o horario ficar correto, visto que o slack esta colocando
+# +1hr como o horario de verao, entao preciso de um TZ com -1hr
+# flatpak override --user --env=TZ=America/Campo_Grande com.slack.Slack
+
+# -> Install Discord
+echo ""
+green_text "> Installing Discord (using snap)"
+sudo snap install discord
+
+# -> Install Telegram
+echo ""
+green_text "> Installing Telegram (using snap)"
+sudo snap install telegram-desktop
+
+# -> Install youtube-dl
+echo ""
+green_text "> Installing youtube-dl (using curl)"
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
