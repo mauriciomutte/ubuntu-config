@@ -19,9 +19,7 @@ $ wget https://raw.githubusercontent.com/mauriciomutte/ubuntu-config/master/inst
 ### Apps
 - Google Chrome
 - Spotify
-- Slack
 - Discord
-- Telegram
 - ![Youtube-dl]()
 
 ### Development
