@@ -20,7 +20,7 @@ $ wget https://raw.githubusercontent.com/mauriciomutte/ubuntu-config/master/inst
 - Google Chrome
 - Spotify
 - Discord
-- ![Youtube-dl]()
+- ![Youtube-dl](https://github.com/ytdl-org/youtube-dl)
 
 ### Development
 - GIT
