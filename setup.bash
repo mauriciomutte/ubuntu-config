@@ -27,7 +27,6 @@ sudo apt-get update
 # -> Install Curl
 # -> Install ZSH
 sudo apt-get install -y \
-  ubuntu-restricted-extras \
   htop \
   zsh \
   curl \
