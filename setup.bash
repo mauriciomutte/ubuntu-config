@@ -31,7 +31,7 @@ sudo apt-get install -y \
   htop \
   zsh \
   curl \
-  vlc browser-plugin-vlc \
+  vlc \
 
 
 # -------- INSTALL APPS --------
